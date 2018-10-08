@@ -5,7 +5,7 @@ function generateAppPage() {
     <div class="css-container">
         <h2>The Original Shopping List App</h2>
         <form id="js-form">
-            <label for="list-entry">Add an Item</label>
+            <label for="list-entry">Add an Item: </label>
             <input type="text" name="list-entry" class="js-list-entry" placeholder="e.g., kale">
             <button type="submit">Add Item</button>
         </form>
