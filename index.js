@@ -41,23 +41,17 @@ function generateAppPage() {
     `
 }
 
-function generateShoppingList() {
-    return `
-        <p>check this out</p>
-    `
-}
 
-function renderShoppingList() {
-    $('.js-list').html(generateShoppingList());
-}
 
 
 function renderStartPage() {
-    $('main').html(generateStartPage());
+    const startPage = generateStartPage();
+    $('main').html(startPage);
 }
 
 function renderAppPage() {
-    $('main').html(generateAppPage());
+    const appPage = generateAppPage();
+    $('main').html(appPage);
     renderShoppingList();
 }
 
