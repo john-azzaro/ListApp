@@ -4,25 +4,8 @@ const STORE = [
     {name: "apples"},
     {name: "pears"},
     {name: "oranges"},
+    {name: "berries"},
 ];
-
-
-function generateAppPage() {
-    return `
-    <div class="css-container">
-        <h2>The Original Shopping List App</h2>
-        <form id="js-form">
-            <label for="list-entry">Add an Item: </label>
-            <input type="text" name="list-entry" class="js-list-entry" placeholder="e.g., kale">
-            <button type="submit">Add Item</button>
-        </form>
-        <ul class="css-shopping-list js-list">
-        <p>Shopping items go here</p>
-        </ul>
-        <button id="goback">Go back</button>
-    </div>
-    `
-}
 
 function generateStartPage() {
     return `
@@ -41,12 +24,41 @@ function generateStartPage() {
     `
 }
 
+function generateAppPage() {
+    return `
+    <div class="css-container">
+        <h2>The Original Shopping List App</h2>
+        <form id="js-form">
+            <label for="list-entry">Add an Item: </label>
+            <input type="text" name="list-entry" class="js-list-entry" placeholder="e.g., kale">
+            <button type="submit">Add Item</button>
+        </form>
+        <ul class="js-list css-shopping-list">
+            <p>Shopping items go here</p>
+        </ul>
+        <button id="goback">Go back</button>
+    </div>
+    `
+}
+
+function generateShoppingList() {
+    return `
+        <p>check this out</p>
+    `
+}
+
+function renderShoppingList() {
+    $('.js-list').html(generateShoppingList());
+}
+
+
 function renderStartPage() {
-    $('main').html(generateStartPage);
+    $('main').html(generateStartPage());
 }
 
 function renderAppPage() {
-    $('main').html(generateAppPage);
+    $('main').html(generateAppPage());
+    renderShoppingList();
 }
 
 
