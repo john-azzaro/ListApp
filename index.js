@@ -1,5 +1,12 @@
 "use strict";
 
+const STORE = [
+    {name: "apples"},
+    {name: "pears"},
+    {name: "oranges"},
+];
+
+
 function generateAppPage() {
     return `
     <div class="css-container">
