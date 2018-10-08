@@ -42,6 +42,24 @@ function generateAppPage() {
 }
 
 
+function generateItemElement(item) {
+    return `
+        <li>
+            <span>${item.name}</span>
+        </li>
+    `
+}
+
+function generateListItems(shoppingList) {
+    const items = shoppingList.map((item) => generateItemElement(item));
+    return items.join("");
+}
+
+
+function renderShoppingList() {
+    const listItems = generateListItems(STORE);
+    $('.js-list').html(listItems);
+}
 
 
 function renderStartPage() {
