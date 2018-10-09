@@ -1,7 +1,7 @@
 "use strict";
 
-// start page to app page
-// list generates
+// start page to app page (done)
+// list generates (done)
 // add to list
 
 const STORE = [
@@ -85,11 +85,28 @@ function handleGoBack() {
         renderStartPage();
     });
 }
+/////////////////////////////////////////////////////////////////////
 
+function addItemToShoppingList(itemName) {
+    STORE.push({name: itemName});
+}
+
+function handleAddItemSubmit() {
+    $('.js-form').submit(function(event) {
+        event.preventDefault();
+        const newItemName = $('.js-list-entry').val();
+        $('.js-list-entry').val("");
+        addItemToShoppingList(newItemName);
+        renderShoppingList();
+    });
+}
+
+///////////////////////////////////////////////////////////////////////
 
 function setUpEventHandlers() {
     handleStartPage();
     handleGoBack();
+    handleAddItemSubmit();
 }
 
 function initializeApp() {
