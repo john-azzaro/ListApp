@@ -31,17 +31,15 @@ function generateStartPage() {
 function generateAppPage() {
     return `
     <div class="css-container">
-        <h2>The Original Shopping List App</h2>
-        <form id="js-form">
-            <label for="list-entry">Add an Item: </label>
-            <input type="text" name="list-entry" class="js-list-entry" placeholder="e.g., kale">
-            <button type="submit">Add Item</button>
+        <form id="js-shopping-list-form">
+            <label for="shopping-list-entry">Add an item</label>
+            <input type="text" name="shopping-list-entry" class="js-shopping-list-entry" placeholder="e.g., broccoli">
+            <button type="submit">Add item</button>
         </form>
-        <ul class="js-list css-shopping-list">
-            <p>Shopping items go here</p>
+        <ul class="css-shopping-list js-list">   
         </ul>
-        <button id="goback">Go back</button>
     </div>
+
     `
 }
 
@@ -85,33 +83,34 @@ function handleGoBack() {
         renderStartPage();
     });
 }
-/////////////////////////////////////////////////////////////////////
+/////// ADD ITEM ////////////////////////////////////////////////////////
 
-function addItemToShoppingList(itemName) {
+function addItemToList(itemName) {
     STORE.push({name: itemName});
-}
+  }
 
-function handleAddItemSubmit() {
-    $('.js-form').submit(function(event) {
-        event.preventDefault();
-        const newItemName = $('.js-list-entry').val();
-        $('.js-list-entry').val("");
-        addItemToShoppingList(newItemName);
-        renderShoppingList();
+function handleNewItemSubmission() {
+    $('main').submit('#js-shopping-list-form', function(event) {
+      event.preventDefault();
+      const newItemName = $('.js-shopping-list-entry').val();
+      $('.js-shopping-list-entry').val('');
+      addItemToList(newItemName);
+      renderShoppingList();
     });
-}
-
+  }
+  
 ///////////////////////////////////////////////////////////////////////
 
 function setUpEventHandlers() {
     handleStartPage();
     handleGoBack();
-    handleAddItemSubmit();
+    handleNewItemSubmission();
 }
 
 function initializeApp() {
     setUpEventHandlers();
     renderStartPage();
+
 }
 
 $(initializeApp)
