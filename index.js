@@ -83,7 +83,7 @@ function handleGoBack() {
         renderStartPage();
     });
 }
-/////// ADD ITEM ////////////////////////////////////////////////////////
+/////// ADD ITEM ///////////////////////////////////////////////////////
 
 function addItemToList(itemName) {
     STORE.push({name: itemName});
@@ -101,6 +101,20 @@ function handleNewItemSubmission() {
   
 ///////////////////////////////////////////////////////////////////////
 
+/////// Delete Item ///////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
 function setUpEventHandlers() {
     handleStartPage();
     handleGoBack();
@@ -110,7 +124,6 @@ function setUpEventHandlers() {
 function initializeApp() {
     setUpEventHandlers();
     renderStartPage();
-
 }
 
 $(initializeApp)
