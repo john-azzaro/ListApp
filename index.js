@@ -1,5 +1,9 @@
 "use strict";
 
+// start page to app page
+// list generates
+// add to list
+
 const STORE = [
     {name: "apples"},
     {name: "pears"},
@@ -41,7 +45,6 @@ function generateAppPage() {
     `
 }
 
-
 function generateItemElement(item) {
     return `
         <li>
@@ -55,12 +58,10 @@ function generateListItems(shoppingList) {
     return items.join("");
 }
 
-
 function renderShoppingList() {
     const listItems = generateListItems(STORE);
-    $('.js-list').html(listItems);
+    $(".js-list").html(listItems);
 }
-
 
 function renderStartPage() {
     const startPage = generateStartPage();
@@ -73,7 +74,6 @@ function renderAppPage() {
     renderShoppingList();
 }
 
-
 function handleStartPage() {
     $('main').on('click', '#start', function(event) {
         renderAppPage();
@@ -85,6 +85,7 @@ function handleGoBack() {
         renderStartPage();
     });
 }
+
 
 function setUpEventHandlers() {
     handleStartPage();
