@@ -11,7 +11,11 @@ const STORE = [
     {name: "berries"},
 ];
 
-function generateStartPage() {
+function addItemToList(itemName) {
+    STORE.push({name: itemName});
+  }
+  
+  function generateStartPage() {
     return `
     <div class="css-container">
         <h2>Welcome to the Original Shopping List App!</h2>
@@ -25,7 +29,7 @@ function generateStartPage() {
         <p>So what are you waiting for?  Start the shopping app now!</p>
         <button id="start">Get Started!</button>
     </div>
-    `
+    `;
 }
 
 function generateAppPage() {
@@ -40,7 +44,7 @@ function generateAppPage() {
         </ul>
     </div>
 
-    `
+    `;
 }
 
 function generateItemElement(item) {
@@ -83,11 +87,6 @@ function handleGoBack() {
         renderStartPage();
     });
 }
-/////// ADD ITEM ///////////////////////////////////////////////////////
-
-function addItemToList(itemName) {
-    STORE.push({name: itemName});
-  }
 
 function handleNewItemSubmission() {
     $('main').submit('#js-shopping-list-form', function(event) {
@@ -97,29 +96,13 @@ function handleNewItemSubmission() {
       addItemToList(newItemName);
       renderShoppingList();
     });
-  }
-  
-///////////////////////////////////////////////////////////////////////
-
-/////// Delete Item ///////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////
+}
 
 function setUpEventHandlers() {
     handleStartPage();
     handleGoBack();
     handleNewItemSubmission();
-}
+ }
 
 function initializeApp() {
     setUpEventHandlers();
